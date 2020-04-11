@@ -10,7 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
-    "node-cron": "^2.0.3"
+    "dotenv": "^8.2.0",
+    "node-cron": "^2.0.3",
+    "twilio": "^3.42.1"
   },
   "type": "module"
 }
