@@ -20,8 +20,12 @@ cron.schedule('* * * * *', () => {
 		console.log('nothing found yet')
 		curbside()
 			.then(res => {
+				const itemsLen = res.data.items.length;
 				found = true;
-				messageTwilio(res.data.items.length)
+
+				if(itemsLen){
+					messageTwilio(itemsLen)
+				}
 			})
 			.catch(err => {console.log(err)})
 	}
