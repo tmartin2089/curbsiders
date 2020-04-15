@@ -12,12 +12,12 @@ const curbside = () => {
   return axios.get(process.env.MY_HEB)  
 }
 
+let found = false;
+
 cron.schedule('* * * * *', () => {
-	let found = false;
 	console.log('running every minute', this);
 
 	if(!found) {
-		console.log('nothing found yet')
 		curbside()
 			.then(res => {
 				const itemsLen = res.data.items.length;
